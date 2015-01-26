@@ -3,13 +3,14 @@ package main
 import (
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strconv"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 )
 
-const file = "./gvpf.html"
+var file = filepath.Join(os.TempDir(), "./gvpf.html")
 
 func main() {
 	if err := search(); err != nil {
